@@ -6,6 +6,8 @@ use App\Http\Controllers\Mobile\Fitur\LoginController;
 use App\Http\Controllers\Mobile\Fitur\RegisterController;
 use App\Http\Controllers\Mobile\Fitur\ProdukController;
 use App\Http\Controllers\Mobile\Page\ProdukController AS ShowProdukController;
+use App\Http\Controllers\TransactionController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -21,4 +23,6 @@ use App\Http\Controllers\Mobile\Page\ProdukController AS ShowProdukController;
 Route::post('/login', [LoginController::class, 'Login']);
 Route::post('/register', [RegisterController::class, 'Register']);
 Route::get('/produk', [ShowProdukController::class, 'index']);
-Route::post('/kategori', [ShowProdukController::class, 'kategori']);
+Route::get('/kategori', [ShowProdukController::class, 'allCategory']);
+Route::get('/kategorifil', [ShowProdukController::class, 'kategori']);
+Route::post('/pesananbaru', [TransactionController::class, 'pesananSekarang']);
